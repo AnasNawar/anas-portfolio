@@ -626,11 +626,19 @@ footer a:hover {
 
 @media (max-width: 480px) and (max-height: 650px) {
   #hero {
-    padding-bottom: 56px;
+    padding-bottom: 48px;
   }
 
   #hero p {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+  }
+
+  /* Ensure footer/contact block sits at the bottom of the hero stack on short heights */
+  .footer-style {
+    position: static;
+    bottom: auto;
+    margin-top: auto;
+    padding: 10px 12px;
   }
 }
 
