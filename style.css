@@ -402,20 +402,24 @@ footer a:hover {
 
   .navbar {
     flex-wrap: wrap;
-    row-gap: 8px;
+    justify-content: center;
+    row-gap: 10px;
     padding: 12px 4%;
   }
 
   .logo {
+    width: 100%;
+    text-align: center;
     font-size: 1.35rem;
     line-height: 1.1;
   }
 
   .navbar ul {
+    width: 100%;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 6px 12px;
-    max-width: 72%;
+    justify-content: center;
+    gap: 8px 14px;
+    max-width: 100%;
   }
 
   .navbar a {
@@ -461,9 +465,20 @@ footer a:hover {
     white-space: nowrap;
   }
 
+  .avatar-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+
+  .avatar {
+    width: 216px;
+    height: 216px;
+  }
+
   .moving-logo {
     width: 42px;
     opacity: 0.14;
+    z-index: 1;
   }
 
   .flutter-logo { top: 14%; left: 16px; }
@@ -476,6 +491,20 @@ footer a:hover {
   .sql-logo { bottom: 22%; right: 16px; }
   .vscode-logo { bottom: 10%; left: 16px; }
   .dart-logo { bottom: 10%; right: 16px; }
+
+  header,
+  section,
+  footer,
+  .footer-style {
+    position: relative;
+    z-index: 2;
+  }
+
+  .footer-style {
+    position: static;
+    bottom: auto;
+    margin-top: 20px;
+  }
 }
 
 @media (max-width: 360px) {
@@ -486,7 +515,7 @@ footer a:hover {
 
   .navbar ul {
     gap: 5px 10px;
-    max-width: 70%;
+    max-width: 100%;
   }
 
   .navbar a {
@@ -500,5 +529,15 @@ footer a:hover {
 
   .moving-logo {
     width: 38px;
+  }
+
+  .avatar-wrapper {
+    width: 190px;
+    height: 190px;
+  }
+
+  .avatar {
+    width: 186px;
+    height: 186px;
   }
 }
