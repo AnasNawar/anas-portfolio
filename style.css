@@ -375,6 +375,48 @@ footer a:hover {
   }
 }
 
+@media (max-height: 650px) {
+  /* Prevent double vertical centering on short screens */
+  #hero {
+    height: auto;
+    min-height: 100svh;
+    justify-content: flex-start;
+    align-items: center;
+    /* Provide safe top padding that keeps content below fixed header */
+    padding: clamp(110px, 16vh, 140px) 6% 64px;
+  }
+
+  .fade-slide {
+    min-height: auto;
+    justify-content: flex-start;
+  }
+
+  /* Scale avatar down for short heights (works for 425x587, 1024x587, 1440x587) */
+  .avatar-wrapper {
+    width: clamp(200px, 34vh, 260px);
+    height: clamp(200px, 34vh, 260px);
+    margin-bottom: 18px;
+  }
+
+  .avatar {
+    width: calc(clamp(200px, 34vh, 260px) - 4px);
+    height: calc(clamp(200px, 34vh, 260px) - 4px);
+  }
+
+  /* Reduce crowding for paragraph on short heights */
+  #hero p {
+    margin-bottom: 12px;
+    margin-inline: auto;
+  }
+
+  /* Disable sticky footer-style on short heights to prevent crowding */
+  .footer-style {
+    position: static;
+    bottom: auto;
+    margin-top: 18px;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .navbar ul {
