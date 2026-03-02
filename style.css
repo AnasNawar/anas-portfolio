@@ -394,3 +394,111 @@ footer a:hover {
 }
 
 
+
+@media (max-width: 480px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    row-gap: 8px;
+    padding: 12px 4%;
+  }
+
+  .logo {
+    font-size: 1.35rem;
+    line-height: 1.1;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px 12px;
+    max-width: 72%;
+  }
+
+  .navbar a {
+    font-size: 0.9rem;
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+
+  #hero {
+    height: auto;
+    min-height: 100svh;
+    padding: 138px 6% 88px;
+  }
+
+  #hero .neon {
+    font-size: clamp(2rem, 9vw, 2.55rem);
+    line-height: 1.14;
+    overflow-wrap: anywhere;
+  }
+
+  .subtitle {
+    font-size: clamp(1.25rem, 6.8vw, 1.8rem);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  #hero p {
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+  }
+
+  .socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 14px;
+    margin-top: 14px;
+  }
+
+  .socials a {
+    margin: 0;
+    line-height: 1.35;
+    white-space: nowrap;
+  }
+
+  .moving-logo {
+    width: 42px;
+    opacity: 0.14;
+  }
+
+  .flutter-logo { top: 14%; left: 16px; }
+  .python-logo { top: 14%; right: 16px; }
+  .iti-logo { top: 32%; left: 16px; }
+  .jira-logo { top: 32%; right: 16px; }
+  .postman-logo { top: 50%; left: 16px; }
+  .java-logo { top: 50%; right: 16px; }
+  .mongo-logo { bottom: 22%; left: 16px; }
+  .sql-logo { bottom: 22%; right: 16px; }
+  .vscode-logo { bottom: 10%; left: 16px; }
+  .dart-logo { bottom: 10%; right: 16px; }
+}
+
+@media (max-width: 360px) {
+  .navbar {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  .navbar ul {
+    gap: 5px 10px;
+    max-width: 70%;
+  }
+
+  .navbar a {
+    font-size: 0.84rem;
+  }
+
+  #hero {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .moving-logo {
+    width: 38px;
+  }
+}
