@@ -1,4 +1,23 @@
 // 🌀 Moving Flutter & Dart logos
+// Keep a stable viewport unit for iOS Safari while browser bars expand/collapse
+(() => {
+  const setViewportHeight = () => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  };
+
+  let resizeTimer;
+  const scheduleViewportUpdate = () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(setViewportHeight, 120);
+  };
+
+  document.addEventListener("DOMContentLoaded", setViewportHeight);
+  window.addEventListener("resize", scheduleViewportUpdate, { passive: true });
+  window.addEventListener("orientationchange", scheduleViewportUpdate, { passive: true });
+  setViewportHeight();
+})();
+
 document.addEventListener("mousemove", (e) => {
   const flutter = document.querySelector(".flutter-logo");
   const dart = document.querySelector(".dart-logo");

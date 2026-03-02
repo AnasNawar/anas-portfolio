@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
+:root {
+  --vh: 1vh;
+}
+
 /* Reset & Base */
 * {
   box-sizing: border-box;
@@ -17,7 +21,7 @@ html, body {
 }
 
 body {
-  min-height: 100vh;
+  min-height: calc(var(--vh) * 100);
   display: flex;
   flex-direction: column;
 }
@@ -156,7 +160,8 @@ p, li {
 
 /* Hero */
 #hero {
-  height: 100vh;
+  height: auto;
+  min-height: calc(var(--vh) * 100);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -259,6 +264,7 @@ footer a:hover {
   opacity: 0.2;
   pointer-events: none;
   transition: transform 0.25s ease-out;
+  will-change: transform;
   z-index: 0;
 }
 .flutter-logo {
@@ -315,7 +321,7 @@ footer a:hover {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeSlideIn 1s forwards;
-  min-height: calc(100vh - 160px);
+  min-height: calc((var(--vh) * 100) - 160px);
   display: flex;
   flex-direction: column;
   justify-content: center;   /* center vertically */
@@ -327,14 +333,14 @@ footer a:hover {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeSlideIn 1s forwards;
-   min-height: calc(100vh - 160px);
+   min-height: calc((var(--vh) * 100) - 160px);
   display: flex;
   flex-direction: column;
   justify-content: center;   /* center vertically */
   text-align: center;
 }
 .centerd{
-  position: sticky;
+  position: relative;
   vertical-align: middle;
   alignment-baseline: central;
   align-content: center;
@@ -360,8 +366,8 @@ footer a:hover {
 }
 
 .footer-style {
-  position: sticky;
-  bottom: 0;
+  position: static;
+  bottom: auto;
   width: 100%;
   text-align: center;
   padding: 12px;
@@ -379,11 +385,11 @@ footer a:hover {
   /* Prevent double vertical centering on short screens */
   #hero {
     height: auto;
-    min-height: 100svh;
+    min-height: calc(var(--vh) * 100);
     justify-content: flex-start;
     align-items: center;
     /* Provide safe top padding that keeps content below fixed header */
-    padding: clamp(110px, 16vh, 140px) 6% 64px;
+    padding: clamp(110px, calc(var(--vh) * 16), 140px) 6% 64px;
   }
 
   .fade-slide {
@@ -393,14 +399,14 @@ footer a:hover {
 
   /* Scale avatar down for short heights (works for 425x587, 1024x587, 1440x587) */
   .avatar-wrapper {
-    width: clamp(200px, 34vh, 260px);
-    height: clamp(200px, 34vh, 260px);
+    width: clamp(200px, calc(var(--vh) * 34), 260px);
+    height: clamp(200px, calc(var(--vh) * 34), 260px);
     margin-bottom: 18px;
   }
 
   .avatar {
-    width: calc(clamp(200px, 34vh, 260px) - 4px);
-    height: calc(clamp(200px, 34vh, 260px) - 4px);
+    width: calc(clamp(200px, calc(var(--vh) * 34), 260px) - 4px);
+    height: calc(clamp(200px, calc(var(--vh) * 34), 260px) - 4px);
   }
 
   /* Reduce crowding for paragraph on short heights */
@@ -428,7 +434,7 @@ footer a:hover {
 
   #hero {
     height: auto;
-    min-height: 100svh;
+    min-height: calc(var(--vh) * 100);
     justify-content: flex-start;
     padding: clamp(120px, 18vw, 140px) 6% 78px;
   }
@@ -533,13 +539,18 @@ footer a:hover {
 
   #hero {
     height: auto;
-    min-height: 100svh;
+    min-height: calc(var(--vh) * 100);
+    display: flex;
+    align-items: center;
     justify-content: flex-start;
     padding: clamp(88px, 23vw, 104px) 6% 72px;
   }
 
   .fade-slide {
     min-height: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     justify-content: flex-start;
   }
 
@@ -598,6 +609,7 @@ footer a:hover {
     filter: blur(0.5px);
     z-index: 0;
     pointer-events: none;
+    transition: none;
   }
 
   .flutter-logo { top: 10%; left: 10px; }
@@ -627,10 +639,10 @@ footer a:hover {
 @media (max-width: 480px) and (max-height: 650px) {
   /* Ensure the hero stack fills the viewport height so footer can be pushed down */
   #hero {
-    min-height: calc(100svh + 96px);
+    min-height: calc(var(--vh) * 100);
     display: flex;
     align-items: stretch;
-    padding-bottom: 24px;
+    padding-bottom: 32px;
   }
 
   .fade-slide {
@@ -646,12 +658,17 @@ footer a:hover {
     margin-bottom: 10px;
   }
 
+  .socials {
+    gap: 8px 12px;
+    margin-top: 10px;
+  }
+
   /* Push footer/contact block to the bottom of the hero stack */
   .footer-style {
     position: static;
     bottom: auto;
     margin-top: auto;
-    padding: 10px 12px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
   }
 }
 
