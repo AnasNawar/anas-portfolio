@@ -627,10 +627,10 @@ footer a:hover {
 @media (max-width: 480px) and (max-height: 650px) {
   /* Ensure the hero stack fills the viewport height so footer can be pushed down */
   #hero {
-    min-height: 100svh;
+    min-height: calc(100svh + 96px);
     display: flex;
     align-items: stretch;
-    padding-bottom: 48px;
+    padding-bottom: 24px;
   }
 
   .fade-slide {
@@ -639,6 +639,7 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: stretch;
   }
 
   #hero p {
