@@ -433,7 +433,7 @@ footer a:hover {
     height: auto;
     min-height: 100svh;
     justify-content: flex-start;
-    padding: clamp(104px, 26vw, 124px) 6% 72px;
+    padding: clamp(92px, 24vw, 110px) 6% 72px;
   }
 
   .fade-slide {
@@ -460,6 +460,7 @@ footer a:hover {
     max-width: 28ch;
     margin-top: 10px;
     margin-bottom: 18px;
+    margin-inline: auto;
     line-height: 1.55;
     overflow-wrap: anywhere;
   }
@@ -538,7 +539,7 @@ footer a:hover {
   }
 
   #hero {
-    padding-top: clamp(98px, 29vw, 116px);
+    padding-top: clamp(90px, 27vw, 104px);
     padding-left: 5%;
     padding-right: 5%;
   }
