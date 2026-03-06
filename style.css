@@ -622,17 +622,20 @@ footer a:hover {
     transition: none;
   }
 
-  .appium-logo { top: 10%; left: 10px; }
-  .python-logo { top: 10%; right: 10px; }
-  .intellj-logo { top: 26%; left: 8px; }
-  .jira-logo { top: 26%; right: 8px; }
-  .postman-logo { top: 64%; left: 8px; }
-  .java-logo { top: 64%; right: 8px; }
-  .mongo-logo { bottom: 16%; left: 10px; }
-  .sql-logo { bottom: 16%; right: 10px; }
-  .vscode-logo { bottom: 4%; left: 12px; }
-  .dart-logo { bottom: 4%; right: 12px; }
-    .playwright-logo { top: 64%; left: 8px; }
+  .appium-logo { top: 12%; left: 14px; }
+  .python-logo { top: 12%; right: 14px; }
+  .flutter-logo { top: 24%; left: 12px; }
+  .iti-logo { top: 24%; right: 12px; }
+  .intellj-logo { top: 36%; left: 10px; }
+  .jira-logo { top: 38%; right: 10px; }
+  .playwright-logo { top: 52%; left: 10px; }
+  .git-logo { top: 54%; right: 10px; }
+  .postman-logo { bottom: 32%; left: 12px; }
+  .java-logo { bottom: 32%; right: 12px; }
+  .mongo-logo { bottom: 20%; left: 14px; }
+  .sql-logo { bottom: 20%; right: 14px; }
+  .vscode-logo { bottom: 8%; left: 16px; }
+  .dart-logo { bottom: 8%; right: 16px; }
 
 
   section,
@@ -706,8 +709,24 @@ footer a:hover {
   }
 
   .moving-logo {
-    width: 38px;
+    width: 36px;
+    opacity: 0.07;
   }
+
+  .appium-logo { top: 13%; left: 10px; }
+  .python-logo { top: 13%; right: 10px; }
+  .flutter-logo { top: 25%; left: 8px; }
+  .iti-logo { top: 25%; right: 8px; }
+  .intellj-logo { top: 37%; left: 8px; }
+  .jira-logo { top: 39%; right: 8px; }
+  .playwright-logo { top: 53%; left: 8px; }
+  .git-logo { top: 55%; right: 8px; }
+  .postman-logo { bottom: 33%; left: 9px; }
+  .java-logo { bottom: 33%; right: 9px; }
+  .mongo-logo { bottom: 21%; left: 10px; }
+  .sql-logo { bottom: 21%; right: 10px; }
+  .vscode-logo { bottom: 9%; left: 11px; }
+  .dart-logo { bottom: 9%; right: 11px; }
 
   .avatar-wrapper {
     width: 190px;
