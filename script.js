@@ -21,6 +21,16 @@
 document.addEventListener("mousemove", (e) => {
   const flutter = document.querySelector(".flutter-logo");
   const dart = document.querySelector(".dart-logo");
+    const appium = document.querySelector(".appium-logo");
+  const java = document.querySelector(".java-logo");
+    const jira = document.querySelector(".jira-logo");
+  const git = document.querySelector(".git-logo");
+    const intellj = document.querySelector(".intellj-logo");
+  const mongo = document.querySelector(".mongo-logo");
+    const playWright = document.querySelector(".playwright-logo");
+  const postman = document.querySelector(".postman-logo");
+    const sql = document.querySelector(".sql-logo");
+  const vscode = document.querySelector(".vscode-logo");
   const x = e.clientX / window.innerWidth;
   const y = e.clientY / window.innerHeight;
   flutter.style.transform = `translate(${x * 60}px, ${y * 60}px)`;
