@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
 :root {
   --vh: 1vh;
@@ -312,14 +312,19 @@ footer a:hover {
   right: 40%;
 }
 
-.intellj-logo {
-  top: 15%;
-  left: 40%;
+.appium-logo {
+  top: 24%;
+  left: 6%;
 }
 
 .intellj-logo {
-  top: 15%;
-  right: 40%;
+  top: 16%;
+  right: 36%;
+}
+
+.playwright-logo {
+  top: 24%;
+  right: 30%;
 }
 /* Fade-slide Animation */
 .fade-slide {
@@ -714,3 +719,4 @@ footer a:hover {
     height: 186px;
   }
 }
+
