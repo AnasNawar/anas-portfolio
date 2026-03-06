@@ -617,7 +617,7 @@ footer a:hover {
     transition: none;
   }
 
-  .flutter-logo { top: 10%; left: 10px; }
+  .appium-logo { top: 10%; left: 10px; }
   .python-logo { top: 10%; right: 10px; }
   .intellj-logo { top: 26%; left: 8px; }
   .jira-logo { top: 26%; right: 8px; }
@@ -627,6 +627,8 @@ footer a:hover {
   .sql-logo { bottom: 16%; right: 10px; }
   .vscode-logo { bottom: 4%; left: 12px; }
   .dart-logo { bottom: 4%; right: 12px; }
+    .playwright-logo { top: 64%; left: 8px; }
+
 
   section,
   #hero {

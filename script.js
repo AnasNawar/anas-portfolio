@@ -19,7 +19,6 @@
 })();
 
 document.addEventListener("mousemove", (e) => {
-  const flutter = document.querySelector(".flutter-logo");
   const dart = document.querySelector(".dart-logo");
     const appium = document.querySelector(".appium-logo");
   const java = document.querySelector(".java-logo");
@@ -31,10 +30,21 @@ document.addEventListener("mousemove", (e) => {
   const postman = document.querySelector(".postman-logo");
     const sql = document.querySelector(".sql-logo");
   const vscode = document.querySelector(".vscode-logo");
+  if (!dart || !appium || !java || !jira || !git || !intellj || !mongo || !playWright || !postman || !sql || !vscode
+  ) return;
   const x = e.clientX / window.innerWidth;
   const y = e.clientY / window.innerHeight;
-  flutter.style.transform = `translate(${x * 60}px, ${y * 60}px)`;
   dart.style.transform = `translate(${-x * 60}px, ${-y * 60}px)`;
+  appium.style.transform = `translate(${-x * 50}px, ${-y * 50}px)`;
+  java.style.transform = `translate(${-x * 40}px, ${-y * 40}px)`;
+  jira.style.transform = `translate(${-x * 30}px, ${-y * 30}px)`;
+  git.style.transform = `translate(${-x * 20}px, ${-y * 20}px)`;
+  intellj.style.transform = `translate(${-x * 10}px, ${-y * 10}px)`;
+  mongo.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+  playWright.style.transform = `translate(${x * 30}px, ${y * 30}px)`;
+  postman.style.transform = `translate(${x * 40}px, ${y * 40}px)`;
+  sql.style.transform = `translate(${x * 50}px, ${y * 50}px)`;
+  vscode.style.transform = `translate(${x * 60}px, ${y * 60}px)`;
 });
 
 // ✨ Preloader fade-out
