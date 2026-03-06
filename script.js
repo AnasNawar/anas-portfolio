@@ -18,34 +18,44 @@
   setViewportHeight();
 })();
 
-document.addEventListener("mousemove", (e) => {
-  const dart = document.querySelector(".dart-logo");
-    const appium = document.querySelector(".appium-logo");
-  const java = document.querySelector(".java-logo");
-    const jira = document.querySelector(".jira-logo");
-  const git = document.querySelector(".git-logo");
-    const intellj = document.querySelector(".intellj-logo");
-  const mongo = document.querySelector(".mongo-logo");
-    const playWright = document.querySelector(".playwright-logo");
-  const postman = document.querySelector(".postman-logo");
-    const sql = document.querySelector(".sql-logo");
-  const vscode = document.querySelector(".vscode-logo");
-  if (!dart || !appium || !java || !jira || !git || !intellj || !mongo || !playWright || !postman || !sql || !vscode
-  ) return;
-  const x = e.clientX / window.innerWidth;
-  const y = e.clientY / window.innerHeight;
-  dart.style.transform = `translate(${-x * 60}px, ${-y * 60}px)`;
-  appium.style.transform = `translate(${-x * 50}px, ${-y * 50}px)`;
-  java.style.transform = `translate(${-x * 40}px, ${-y * 40}px)`;
-  jira.style.transform = `translate(${-x * 30}px, ${-y * 30}px)`;
-  git.style.transform = `translate(${-x * 20}px, ${-y * 20}px)`;
-  intellj.style.transform = `translate(${-x * 10}px, ${-y * 10}px)`;
-  mongo.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
-  playWright.style.transform = `translate(${x * 30}px, ${y * 30}px)`;
-  postman.style.transform = `translate(${x * 40}px, ${y * 40}px)`;
-  sql.style.transform = `translate(${x * 50}px, ${y * 50}px)`;
-  vscode.style.transform = `translate(${x * 60}px, ${y * 60}px)`;
-});
+const movingLogos = document.querySelectorAll(
+  ".moving-logo:not(.dart-logo):not(.flutter-logo)"
+);
+
+if (movingLogos.length) {
+  let mouseX = 0;
+  let mouseY = 0;
+  let currentX = 0;
+  let currentY = 0;
+  let rafId = null;
+
+  const animateLogos = () => {
+    currentX += (mouseX - currentX) * 0.12;
+    currentY += (mouseY - currentY) * 0.12;
+
+    movingLogos.forEach((logo, index) => {
+      const depth = Number.parseFloat(logo.dataset.depth || "30");
+      const direction = index % 2 === 0 ? -1 : 1;
+      const tx = currentX * depth * direction * 2;
+      const ty = currentY * depth * direction * 2;
+      logo.style.transform = `translate(${tx}px, ${ty}px)`;
+    });
+
+    rafId = requestAnimationFrame(animateLogos);
+  };
+
+  document.addEventListener(
+    "mousemove",
+    (e) => {
+      mouseX = e.clientX / window.innerWidth - 0.5;
+      mouseY = e.clientY / window.innerHeight - 0.5;
+      if (!rafId) {
+        rafId = requestAnimationFrame(animateLogos);
+      }
+    },
+    { passive: true }
+  );
+}
 
 // ✨ Preloader fade-out
 window.addEventListener("load", () => {
